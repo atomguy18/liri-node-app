@@ -8,7 +8,6 @@ var fs = require("fs");
 var action = process.argv[2];
 var itemData = process.argv.slice(3);
 console.log(itemData);
-var allData = "";
 
 switch (action) {
     case "concert-this":
@@ -32,15 +31,13 @@ function concert(itemData) {
     var concertData = itemData.join("-");
     axios.get("https://api.seatgeek.com/2/events?client_id=MTk0MTg0MDF8MTU3MzUwMTEwMS40MQ&performers.slug=" + concertData)
         .then(function (response) {
-            //name of venue
-            console.log(response.data.events[0].venue.name);
 
-            //location of venue
-            console.log(response.data.events[0].venue.display_location);
+            console.log("Name of Venue: " + response.data.events[0].venue.name);
 
-            //Date of Concert
+            console.log("Location of Venue: " + response.data.events[0].venue.display_location);
+
             var dateTime = response.data.events[0].datetime_local;
-            console.log(moment(dateTime).format("MM DD, YYYY"))
+            console.log("Date of concert: " + moment(dateTime).format("MM DD, YYYY"))
         });
 };
 function song(itemData) {
@@ -52,16 +49,16 @@ function song(itemData) {
         .then(function (response) {
 
             //Artist
-            console.log(response.tracks.items[0].artists[0].name);
+            console.log("Artist: " + response.tracks.items[0].artists[0].name);
 
             //The song's name
-            console.log(response.tracks.items[0].name);
+            console.log("Song name: " + response.tracks.items[0].name);
 
             //* A preview link of the song from Spotify
-            console.log(response.tracks.items[0].preview_url);
+            console.log("Preview of song: " + response.tracks.items[0].preview_url);
 
             //The album that the song is from
-            console.log(response.tracks.items[0].album.name);
+            console.log("Album: " + response.tracks.items[0].album.name);
         });
 };
 function movie(itemData) {
@@ -73,28 +70,28 @@ function movie(itemData) {
         .then(function (response) {
 
             //* Title of the movie.
-            console.log(response.data.Title);
+            console.log("Movie title: " + response.data.Title);
 
             //* Year the movie came out.
-            console.log(response.data.Year);
+            console.log("Release year: " + response.data.Year);
 
             //* IMDB Rating of the movie.
-            console.log(response.data.Ratings[0].Value);
+            console.log("IMDB Rating: " + response.data.Ratings[0].Value);
 
             //* Rotten Tomatoes Rating of the movie.
-            console.log(response.data.Ratings[1].Value);
+            console.log("Rotten Tomatoes Rating: " + response.data.Ratings[1].Value);
 
             //* Country where the movie was produced.
-            console.log(response.data.Country);
+            console.log("Country produced in: " + response.data.Country);
 
             //* Language of the movie.
-            console.log(response.data.Language);
+            console.log("Language of moive: " + response.data.Language);
 
             //* Plot of the movie.
-            console.log(response.data.Plot);
+            console.log("Movie plot: " + response.data.Plot);
 
             //* Actors in the movie.
-            console.log(response.data.Actors);
+            console.log("Movie actors: " + response.data.Actors);
 
         });
 };

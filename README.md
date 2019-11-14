@@ -1,35 +1,38 @@
 # liri-node-app
 
-##Purpose
+## Purpose
 
-This is an "assistant" app similiar to siri but accessed through the terminal. It can be asked about movies, songs, and concerts of a specified artist. all the information is retrieved from APIs then output to the console as well as logged to a log.txt file. This app was made to practice my skills with Node and using modules.
+This is an "assistant" app similiar to siri but accessed through the terminal. This app can be asked about movies, songs, and concerts of a specified artist. All the information is retrieved from APIs, and then output to the console.  The information retrieved will supply information about the three parameters, mentioned previously.
 
-##Overview
 
-This app takes in a users command as well as the search query or details. it then calls the function inputChoice to match the details to the proper command. it then calls the function related to that command. getSong, getConcert, getMovie, all do essentially the same thing. take the input the user give and makes an API call gets the relevant data from the response outputs in a formate the user can read. the addToLog function logs it to a text file using the fs module. the getSong and getMovie functions have default values incase the user doesnt input any information. the do-what-it-says command calls the doIt function which reads the 'random.txt' file parses the info and runs the command in the file.
+## Overview
 
-##Instructions
+This app takes in the command line prompts chosen by the user to query what information they want to retrieve.  By using process.argv[2] for the type of search and process.argv[3].slice() for the serch variable, the switch function puts the search variable through the correct type of search.  An API call retreives relevant data from the the response outputs in a form the user can read.
 
-clone the repo git clone https://github.com/dcornnell/liri-node-app.git
-once in the file run: npm install
-to actually run this app you will need to have a spotify developer tools and set up a .env file
-commands
-node liri.js concert-this (band name) 
-node liri.js movie-this (movie title)
-node liri.js spotify-this-song (song title)
-node liri.js do-what it says
+## Instructions
 
-##Technologies Used
+1. Clone the repo git clone https://github.com/atomguy18/liri-node-app.git
+2. Once in the file run: npm install
+3. Create a .gitingore file to ignore various libraries that the user should install locally.
+4. To actually run this app you will need to have a spotify developer tools and set up a .env file.
+5. Terminal commands
+    1. node liri.js concert-this (band name) 
+    2. node liri.js movie-this (movie title)
+    3. node liri.js spotify-this-song (song title)
+    4. node liri.js do-what it says
 
--Javascript
--Node
--modules
--fs
--spotify
--axious
--module
--dotenv
--API
--OMDB
--Spotify
--seatgeek
+## Technologies Used
+
+* Javascript
+* Node
+* modules
+* fs
+* spotify
+* axious
+* module
+* dotenv
+* API
+* OMDB
+* Spotify
+* seatgeek
+
