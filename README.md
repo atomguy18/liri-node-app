@@ -16,9 +16,12 @@ This app takes in the command line prompts chosen by the user to query what info
 3. Create a .gitingore file to ignore various libraries that the user should install locally.
 4. To actually run this app you will need to have a spotify developer tools and set up a .env file.
 5. Terminal commands
-    1. node liri.js concert-this (band name) 
+    1. node liri.js concert-this (band name)
+        1. ![concert command line](/images/concert.png)
     2. node liri.js movie-this (movie title)
+        1. ![movie command line](/images/movie.png)
     3. node liri.js spotify-this-song (song title)
+        1. ![song command line](/images/song.png)
     4. node liri.js do-what it says
 
 ## Technologies Used
